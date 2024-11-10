@@ -1,0 +1,181 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url("blue-pink.jpg"); /* Replace with your desired image path */
+  background-size: cover;
+  background-repeat: repeat-y;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Form Container */
+#form-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 500px; /* Adjust maximum width as needed */
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  background: linear-gradient(to bottom right, rgba(161, 191, 218, 0.8), rgba(207, 125, 195, 0.8)); /* Deep red to white with 0.7 opacity */
+}
+
+/* Personal Information Section */
+#personal-info-section {
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+#personal-info-section h2 {
+  font-size: 24px; /* Increased font size for better visibility */
+  margin-bottom: 10px;
+}
+
+#personal-info-section label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 18px; /* Increased font size for better readability */
+}
+
+#personal-info-section input[type="text"],
+#personal-info-section input[type="number"] {
+  width: 100%;
+  padding: 5px;
+  border-radius: 3px;
+  font-size: 18px; /* Increased font size for better readability */
+}
+
+#personal-info-section select {
+  width: 100%;
+  padding: 5px;
+  border-radius: 3px;
+  font-size: 18px; /* Increased font size for better readability */
+}
+
+#personal-info-section .name-container {
+  flex: 1 0 0; /* Ensure name input takes up available space */
+}
+
+#personal-info-section .age-country-gender-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Adjust spacing as needed */
+}
+
+#personal-info-section .age-country-gender-container > * {
+  flex: 1 0 0; /* Ensure elements take up available space */
+  margin-right: 10px; /* Add horizontal spacing between elements */
+}
+
+/* Questions Section */
+#questions-section {
+  display: none;
+  text-align: center;
+  padding-top: 5px;
+  font-size: 20px; /* Increased font size for better visibility */
+}
+
+/* Selectable Option */
+.selectable-option {
+  cursor: pointer;
+  padding: 10px;
+  border: 3px solid #ccc;
+  border-radius: 50px;
+  margin-bottom: 5px;
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+  background-color: rgba(128, 204, 196, 0.5); /* Blue-gray with 80% opacity */
+  color: #333; /* Default text color */
+  font-size: 18px; /* Increased font size for better readability */
+}
+
+.selectable-option.selected {
+  background-color: rgba(255, 182, 193, 0.5); /* Soft pink with 80% opacity */
+  color: white;
+  transform: scale(1.01); /* Slightly enlarge the selected option */
+}
+
+.selectable-option:hover {
+  background-color: rgba(240, 240, 240, 0.7); /* White with 80% opacity */
+  color: #333;
+  transform: scale(1.01); /* Slightly enlarge the option on hover */
+}
+
+/* Buttons */
+.buttons {
+  text-align: center;
+}
+
+.buttons button {
+  align-items: center;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: transparent 0 0 0 3px, rgba(18, 18, 18, .1) 0 6px 20px;
+  box-sizing: border-box;
+  color: #121212;
+  cursor: pointer;
+  display: inline-flex;
+  flex: 1 1 auto;
+  font-family: Inter, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1;
+  margin: 0 50px;
+  outline: none;
+  padding: 0.6rem 0.8rem; /* Decrease padding */
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .2s, -webkit-box-shadow .2s;
+  white-space: nowrap;
+  border: 2px solid black;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-top: 10px;
+}
+
+/* Result Section */
+#result-section {
+  display: none;
+  text-align: center;
+  font-size: 24px; /* Increased font size for better visibility */
+  line-height: 1.2; /* Adjust line height as needed */
+  padding: 20px; /* Add padding for more space around the text */
+}
+
+
+
+/* Life Expectancy Sidebar */
+#life-expectancy-sidebar {
+  position: fixed;
+  top: 60%;
+  right: 20px;
+  transform: translateY(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: rgba(245, 245, 245, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Circle for Life Expectancy */
+#live-estimation {
+  font-size: 24px; /* Increased font size for better visibility */
+}
+
+.bmi-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: rgb(159, 223, 240);
+  text-decoration: underline;
+}
+
+
+
+

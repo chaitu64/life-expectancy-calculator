@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Expectancy Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="form-container">
+        <form id="lifeExpectancyForm">
+            <div id="personal-info-section">
+                <h2>Personal Information</h2>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name"><br><br>
+
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age"><br><br>
+
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender">
+                    <option value="">Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select><br><br>
+
+                <label for="country">Country:</label>
+                <select id="country" name="country">
+                    <option value="">Select Country</option>
+                    <option value="india">India</option>
+                    <option value="uk">UK</option>
+                    <option value="canada">Canada</option>
+                    <option value="usa">USA</option>
+                    <option value="australia">Australia</option>
+                    <option value="germany">Germany</option>
+                    <option value="france">France</option>
+                    <option value="italy">Italy</option>
+                    <option value="spain">Spain</option>
+                    <option value="brazil">Brazil</option>
+                    <option value="japan">Japan</option>
+                    <option value="china">China</option>
+                    <option value="south_africa">South Africa</option>
+                    <option value="mexico">Mexico</option>
+                    <option value="russia">Russia</option>
+                    <option value="new_zealand">New Zealand</option>
+                    <option value="netherlands">Netherlands</option>
+                    <option value="sweden">Sweden</option>
+                    <option value="norway">Norway</option>
+                    <option value="switzerland">Switzerland</option>
+                    <option value="singapore">Singapore</option>
+                </select><br><br>
+
+
+                <div class="buttons">
+                <button type="button" id="startButton" onclick="showQuestions()">Start</button>
+                </div>
+            </div>
+
+            <div id="questions-section" style="display:none;">
+                <div class="question" id="question1">
+                    <h1>Smoking</h1>
+                    <p>1. Do you smoke?</p>
+                    <div class="selectable-option" data-value="5" id="smokeNever">Never</div>
+                    <div class="selectable-option" data-value="0" id="smokeOccasionally">Occasionally</div>
+                    <div class="selectable-option" data-value="-10" id="smokeRegularly">Regularly</div>
+                </div>
+                
+                <div class="question" id="question2">
+                    <h1>Exercise</h1>
+                    <p>2. How often do you exercise?</p>
+                    <div class="selectable-option" data-value="4" id="exerciseDaily">Daily</div>
+                    <div class="selectable-option" data-value="2" id="exerciseFewTimes">A few times a week</div>
+                    <div class="selectable-option" data-value="0" id="exerciseRarely">Rarely</div>
+                    <div class="selectable-option" data-value="-3" id="exerciseNever">Never</div>
+                </div>
+                
+                <div class="question" id="question3">
+                    <h1>Diet</h1>
+                    <p>3. How would you rate your diet?</p>
+                    <div class="selectable-option" data-value="2" id="dietVeryHealthy">Very healthy (balanced, mostly plant-based)</div>
+                    <div class="selectable-option" data-value="0" id="dietModerate">Moderately healthy (occasional junk food)</div>
+                    <div class="selectable-option" data-value="-3" id="dietUnhealthy">Unhealthy (frequent junk food)</div>
+                </div>
+                
+                <div class="question" id="question4">
+                    <h1>Alcohol Consumption</h1>
+                    <p>4. How much alcohol do you consume?</p>
+                    <div class="selectable-option" data-value="3" id="alcoholNever">Never</div>
+                    <div class="selectable-option" data-value="0" id="alcoholModerate">Moderate (1-2 drinks a day)</div>
+                    <div class="selectable-option" data-value="-3" id="alcoholFrequent">Frequent (3-5 drinks a day)</div>
+                    <div class="selectable-option" data-value="-5" id="alcoholHeavy">Heavy (more than 5 drinks a day)</div>
+                </div>
+                
+                <div class="question" id="question5">
+                    <h1>Sleep</h1>
+                    <p>5. How much sleep do you get per night?</p>
+                    <div class="selectable-option" data-value="3" id="sleep79">7-9 hours</div>
+                    <div class="selectable-option" data-value="0" id="sleep56">5-6 hours</div>
+                    <div class="selectable-option" data-value="-3" id="sleepLessThan5">Less than 5 hours</div>
+                    <div class="selectable-option" data-value="-1" id="sleepMoreThan9">More than 9 hours</div>
+                </div>
+                
+                <div class="question" id="question6">
+                    <h1>Stress Levels</h1>
+                    <p>6. How would you rate your stress levels?</p>
+                    <div class="selectable-option" data-value="3" id="stressLow">Low</div>
+                    <div class="selectable-option" data-value="0" id="stressModerate">Moderate</div>
+                    <div class="selectable-option" data-value="-2" id="stressHigh">High</div>
+                </div>
+                
+                <div class="question" id="question7">
+                    <h1>Safety Precautions</h1>
+                    <p>7. Do you use Safety Precautions while driving?</p>
+                    <div class="selectable-option" data-value="3" id="seatbeltAlways">Always</div>
+                    <div class="selectable-option" data-value="0" id="seatbeltSometimes">Sometimes</div>
+                    <div class="selectable-option" data-value="-2" id="seatbeltNever">Never</div>
+                </div>
+                
+                <div class="question" id="question8">
+                    <h1>Health Check-ups</h1>
+                    <p>8. Do you have regular health check-ups?</p>
+                    <div class="selectable-option" data-value="3" id="checkupYes">Yes</div>
+                    <div class="selectable-option" data-value="-2" id="checkupNo">No</div>
+                </div>
+                
+                <div class="question" id="question9">
+                    <h1>Socializing</h1>
+                    <p>9. How often do you socialize?</p>
+                    <div class="selectable-option" data-value="2" id="socializeFrequent">Frequently (weekly)</div>
+                    <div class="selectable-option" data-value="0" id="socializeOccasional">Occasionally (monthly)</div>
+                    <div class="selectable-option" data-value="-1" id="socializeRarely">Rarely (a few times a year)</div>
+                    <div class="selectable-option" data-value="-3" id="socializeNever">Never</div>
+                </div>
+                
+                <div class="question" id="question10">
+                    <h1>Pollution Levels</h1>
+                    <p>10. Do you live in a city with high pollution levels?</p>
+                    <div class="selectable-option" data-value="-2" id="pollutionNo">Yes</div>
+                    <div class="selectable-option" data-value="0" id="pollutionYes">Moderately</div>
+                    <div class="selectable-option" data-value="2" id="pollutionYes">No</div>
+                </div>
+
+                <div class="question" id="question11">
+                    <h1>Family History of Chronic Diseases</h1>
+                    <p>11. Do you have a family history of chronic diseases (e.g., heart disease, diabetes, cancer)?</p>
+                    <div class="selectable-option" data-value="-4" id="diseaseYes">Yes, multiple family members</div>
+                    <div class="selectable-option" data-value="-1" id="diseaseSome">Yes, but only a few family members</div>
+                    <div class="selectable-option" data-value="1" id="diseaseNone">No family history of chronic diseases</div>
+                </div>
+
+                <!-- Question: BMI -->
+                <div class="question" id="question12">
+                    <h1>Body Mass Index (BMI)</h1>
+                    <p>12. What is your BMI category?</p>
+                    <div class="selectable-option" data-value="-3">Underweight (BMI < 18.5)</div>
+                    <div class="selectable-option" data-value="2">Normal weight (BMI 18.5 - 24.9)</div>
+                    <div class="selectable-option" data-value="-2">Overweight (BMI 25 - 29.9)</div>
+                    <div class="selectable-option" data-value="-4">Obesity (BMI ≥ 30)</div>
+
+                    <a href="bmi-calculator.html" class="bmi-link">Calculate your BMI</a>
+                </div>
+
+                
+                
+
+
+                <div class="buttons">
+                    <button type="button" id="prevButton" style="display:none;" onclick="showPrevQuestion()">Prev</button>
+                    <button type="button" id="nextButton" onclick="showNextQuestion()">Next</button>
+                    <button type="button" id="submitButton" style="display:none;" onclick="calculateLifeExpectancy()">Submit</button>
+                </div>
+            </div>
+
+
+            
+            <div id="result-section" class="buttons" style="display:none;">
+                <p id="result"></p>
+                <button type="button" onclick="restartForm()">Restart</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="life-expectancy-sidebar" style="position:fixed; top:20px; right:20px; border:1px solid #ccc; padding:10px;">
+        <h3>Estimated Life Expectancy</h3>
+        <p id="live-estimation">-- years</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
